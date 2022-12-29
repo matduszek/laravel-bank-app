@@ -569,6 +569,7 @@ class TransactionController extends Controller
             $road->road = $request->input('road');
             $road->amount = $amount;
             $road->full_road = $request->input('full_road');
+            $road->qrcode = $request->input('qrcode');
             $road->long = $request->input('long');
             $road->save();
         }

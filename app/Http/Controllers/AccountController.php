@@ -21,6 +21,11 @@ class AccountController extends Controller
 
     public function save(Request $request)
     {
+        $request->validate([
+            'type' => ['required'],
+            'currency' => ['required']
+        ]);
+
         $typ = $request->input('type');
         $waluta = $request->input('currency');
 
@@ -36,6 +41,11 @@ class AccountController extends Controller
         if($typ == 'N' && $waluta == 'GBP') {
             return redirect()->back()->with('can_not', 'Normalne konto musi posiadać PLN!');
         }
+
+        if($typ == 'CA' && $waluta == 'PLN') {
+            return redirect()->back()->with('can_not', 'Walutowe konto nie może posiadać PLN!');
+        }
+
 
         $ifshow = DB::table('accounts')->where('id_user',Auth::user()->id)->where('type','K')->first();
 

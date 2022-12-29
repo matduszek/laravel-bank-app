@@ -39,7 +39,7 @@
             <input type="hidden" name="time" value="{{ $time }}">
             <input type="hidden" name="end_time" value="{{ $end_time }}">
             <input type="hidden" name="t_id" value="{{$account->id_account}}">
-            <input type="hidden" name="qrcode" value="{{ fake()->numberBetween(3,123000) }}">
+            <input type="hidden" name="qrcode" value="{{ fake()->unique()->numberBetween(3,123000) }}">
             <input type="hidden" name="z" value="BUS">
 
             @if (\Session::has('failed_account'))

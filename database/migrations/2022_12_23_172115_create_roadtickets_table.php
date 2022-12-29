@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('road');
             $table->float('amount');
             $table->string('full_road');
+            $table->integer('qrcode');
             $table->string('long');
             $table->timestamps();
         });

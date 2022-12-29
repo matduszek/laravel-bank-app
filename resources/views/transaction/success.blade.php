@@ -11,7 +11,7 @@
         <div class="py-10">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-emerald-600 overflow-hidden shadow-amber-700 sm:rounded-lg">
-                    <div class="p-6 text-4xl text-white">
+                    <div class="p-6 text-4xl text-center text-white">
                         {{ __("Transakcja udana!") }}
                     </div>
                 </div>

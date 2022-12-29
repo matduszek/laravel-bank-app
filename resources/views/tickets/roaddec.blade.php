@@ -32,7 +32,7 @@
         <br><br>
 
         <div class="mt-6 mx-auto">
-            <h7 class="text-xl text-red-800 mt-6 text-center items-center justify-center"><a href="{{route('show.tickets')}}">Zrezygnuj z ubezpieczenia</a></h7>
+            <h7 class="text-xl text-red-800 mt-6 text-center items-center justify-center"><a href="{{route('show.tickets')}}">POWRÓT</a></h7>
         </div>
 
     </x-auth-card>

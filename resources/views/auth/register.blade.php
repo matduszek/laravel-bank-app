@@ -5,7 +5,8 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
-        <h2 class="text-4xl font-bold text-center">Panel rejestracji</h2>
+        <h2 class="text-4xl font-bold mb-3 text-center">Panel rejestracji</h2>
+        <h2 class="text-sm font-bold mb-5 text-center">Aby założyć konto musisz mieć 18 lat.</h2>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
@@ -32,7 +33,7 @@
 
             <!-- Data urodzenia -->
             <div class="mt-4">
-                <x-input-label for="birth_date" :value="__('Data urodzenia [miesiac/dzien/rok]')" />
+                <x-input-label for="birth_date" :value="__('Data urodzenia [dzien/miesiac/rok]')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="date" name="birth_date" :value="old('birth_date')" required />
                 <x-input-error :messages="$errors->get('birth_date')" class="mt-2" />
             </div>
@@ -130,16 +131,16 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Posiadasz konto?') }}
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Zarejestruj się') }}
                 </x-primary-button>
             </div>
         </form>
         <div class="block mt-8">
-            <h7 class="text-xl text-center"><a href="/">BACK</a></h7>
+            <h7 class="text-xl text-center"><a href="{{ route('main') }}">POWRÓT</a></h7>
         </div>
     </x-auth-card>
 </x-guest-layout>

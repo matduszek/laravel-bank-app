@@ -39,6 +39,7 @@
             <input type="hidden" name="t_id" value="{{$account->id_account}}">
             <input type="hidden" name="full_road" value="{{ $full_road }}">
             <input type="hidden" name="long" value="{{ $long }}">
+            <input type="hidden" name="qrcode" value="{{ fake()->unique()->numberBetween(3,123000) }}">
             <input type="hidden" name="b" value="ROAD">
 
 
