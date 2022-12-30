@@ -113,6 +113,18 @@ Route::middleware('auth')->group(function () {
      */
     Route::match(['get','post'],'/me/busticket', [\App\Http\Controllers\TicketController::class,'showmyticketsbus'])->name('show.bustickets');
     Route::match(['get','post'],'/me/roadticket', [\App\Http\Controllers\TicketController::class,'showmyticketsroad'])->name('show.roadtickets');
+    /*
+     *  Informacje z sekcji footer
+     */
+    Route::get('/statute',[\App\Http\Controllers\FooterController::class,'statute'])->name('show.statute');
+    Route::get('/information',[\App\Http\Controllers\FooterController::class,'information'])->name('show.information');
+    Route::get('/data/administrators',[\App\Http\Controllers\FooterController::class,'data'])->name('show.admindata');
+    Route::get('/session/info',[\App\Http\Controllers\FooterController::class,'session'])->name('show.sessioninfo');
+    Route::get('/transaction/info',[\App\Http\Controllers\FooterController::class,'transaction'])->name('show.transactioninfo');
+    Route::get('/credit/info',[\App\Http\Controllers\FooterController::class,'credit'])->name('show.creditinfo');
+    Route::get('/tickets/info',[\App\Http\Controllers\FooterController::class,'ticket'])->name('show.ticketinfo');
+    Route::get('/insurance/info',[\App\Http\Controllers\FooterController::class,'insurance'])->name('show.insuranceinfo');
+    Route::get('/account/info',[\App\Http\Controllers\FooterController::class,'account'])->name('show.accountinfo');
 });
 
 

@@ -32,7 +32,7 @@
             </main>
         </div>
 
-        <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
+        <footer class="text-center lg:text-left bg-gray-200 text-gray-600">
             <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
                 <div class="mr-12 hidden lg:block">
                     <span>Znajdź nas na platformie GITHUB:</span>
@@ -82,10 +82,13 @@
                             PRAWO
                         </h6>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">REGULAMIN</a>
+                            <a href="{{ route('show.statute') }}" class="text-gray-600">REGULAMIN</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">ADMINISTRATOR DANYCH</a>
+                            <a href="{{ route('show.admindata') }}" class="text-gray-600">ADMINISTRATOR DANYCH</a>
+                        </p>
+                        <p class="mb-4">
+                            <a href="{{ route('show.information') }}" class="text-gray-600">INFORMACJE</a>
                         </p>
                     </div>
                     <div class="">
@@ -93,22 +96,22 @@
                             TECHNOLOGIA
                         </h6>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">SESJE</a>
+                            <a href="{{ route('show.sessioninfo') }}" class="text-gray-600">SESJE</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">PRZELEWY</a>
+                            <a href="{{ route('show.transactioninfo') }}" class="text-gray-600">PRZELEWY</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">KREDYTY</a>
+                            <a href="{{ route('show.creditinfo') }}" class="text-gray-600">KREDYTY</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">BILETY</a>
+                            <a href="{{ route('show.ticketinfo') }}" class="text-gray-600">BILETY</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">UBEZPIECZENIA</a>
+                            <a href="{{ route('show.insuranceinfo') }}" class="text-gray-600">UBEZPIECZENIA</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-gray-600">RACHUNKI BANKOWE</a>
+                            <a href="{{ route('show.accountinfo') }}" class="text-gray-600">RACHUNKI BANKOWE</a>
                         </p>
                     </div>
                     <div class="">
@@ -157,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center p-6 bg-gray-200">
+            <div class="text-center p-6 bg-gray-400">
                 <span>© 2022 Copyright:</span>
                 <a class="text-gray-600 font-semibold" href="https://tailwind-elements.com/">FMMK</a>
             </div>
