@@ -67,7 +67,7 @@
             </div>
 
             <script>
-                let time = 10 * 60;
+                let time = 1 * 60;
                 let refreshIntervalId = setInterval(updateCountdown, 1000);
 
                 function updateCountdown() {
@@ -181,6 +181,10 @@
 
                 <x-responsive-nav-link :href="route('insurance.panel')">
                     {{ __('Ubezpieczenia') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('show.card')">
+                    {{ __('Karty') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

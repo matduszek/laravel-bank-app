@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('main');
 
+Route::get('/sessionexpired', function () {
+    return view('expired');
+})->name('expired');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
