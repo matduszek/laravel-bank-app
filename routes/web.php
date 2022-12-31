@@ -125,6 +125,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/tickets/info',[\App\Http\Controllers\FooterController::class,'ticket'])->name('show.ticketinfo');
     Route::get('/insurance/info',[\App\Http\Controllers\FooterController::class,'insurance'])->name('show.insuranceinfo');
     Route::get('/account/info',[\App\Http\Controllers\FooterController::class,'account'])->name('show.accountinfo');
+    Route::get('/card/info',[\App\Http\Controllers\FooterController::class,'card'])->name('show.cardinfo');
+    Route::get('/office/info',[\App\Http\Controllers\FooterController::class,'office'])->name('show.officeinfo');
+    /*
+     *  Karta bankowa
+     */
+    Route::match(['get','post'],'/cards',[\App\Http\Controllers\CardController::class,'card'])->name('show.card');
 });
 
 

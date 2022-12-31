@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Card;
 use App\Models\Credits;
 use App\Models\Historie;
 use Illuminate\Http\Request;
@@ -154,13 +155,21 @@ class CreditController extends Controller
         if($kwota > 0 && $kwota <= 50000){
             if($zarobki>=2000 && $ile_pracujemy >= 12 && $na_ile_chcemy_kredyt >= 24){
                 $credit = new Account();
+                $card = new Card();
                 $credit->id_user = Auth::user()->id;
                 $credit->balance = $kwota;
                 $credit->type = "K";
                 $credit->account_number = fake()->creditCardNumber();
                 $credit->blik = "N";
                 $credit->currency = "PLN";
+                $card->id_user = Auth::user()->id;
+                $card->cvv = fake()->numberBetween(100,999);
+                $today = date('Y');
+                $card->expires = date('Y', strtotime('+4 years', strtotime($today)));
+                $card->card_number = fake()->unique()->creditCardNumber();
+                $card->type = 'K';
                 $credit->save();
+                $card->save();
                 $creditdata->save();
 
                 return view('dashboard');
@@ -170,13 +179,21 @@ class CreditController extends Controller
         if($kwota >= 50001 && $kwota <= 100000){
             if($zarobki>=3500 && $typ_umowy == "UOP" && $ile_pracujemy >= 24 && $na_ile_chcemy_kredyt >= 65){
                 $credit = new Account();
+                $card = new Card();
                 $credit->id_user = Auth::user()->id;
                 $credit->balance = $kwota;
                 $credit->type = "K";
                 $credit->account_number = fake()->creditCardNumber();
                 $credit->blik = "N";
                 $credit->currency = "PLN";
+                $card->id_user = Auth::user()->id;
+                $card->cvv = fake()->numberBetween(100,999);
+                $today = date('Y');
+                $card->expires = date('Y', strtotime('+4 years', strtotime($today)));
+                $card->card_number = fake()->unique()->creditCardNumber();
+                $card->type = 'K';
                 $credit->save();
+                $card->save();
                 $creditdata->save();
 
                 return view('dashboard');
@@ -186,13 +203,21 @@ class CreditController extends Controller
         if($kwota >= 100001 && $kwota <= 150000){
             if($zarobki>=5500 && $typ_umowy == "UOP" && $ile_pracujemy >= 36 && $na_ile_chcemy_kredyt >= 75){
                 $credit = new Account();
+                $card = new Card();
                 $credit->id_user = Auth::user()->id;
                 $credit->balance = $kwota;
                 $credit->type = "K";
                 $credit->account_number = fake()->creditCardNumber();
                 $credit->blik = "N";
                 $credit->currency = "PLN";
+                $card->id_user = Auth::user()->id;
+                $card->cvv = fake()->numberBetween(100,999);
+                $today = date('Y');
+                $card->expires = date('Y', strtotime('+4 years', strtotime($today)));
+                $card->card_number = fake()->unique()->creditCardNumber();
+                $card->type = 'K';
                 $credit->save();
+                $card->save();
                 $creditdata->save();
 
                 return view('dashboard');
@@ -202,13 +227,21 @@ class CreditController extends Controller
         if($kwota >= 150001 && $kwota <= 200000){
             if($zarobki>=8000 && $typ_umowy == "UOP" && $ile_pracujemy >= 48 && $na_ile_chcemy_kredyt >= 85){
                 $credit = new Account();
+                $card = new Card();
                 $credit->id_user = Auth::user()->id;
                 $credit->balance = $kwota;
                 $credit->type = "K";
                 $credit->account_number = fake()->creditCardNumber();
                 $credit->blik = "N";
                 $credit->currency = "PLN";
+                $card->id_user = Auth::user()->id;
+                $card->cvv = fake()->numberBetween(100,999);
+                $today = date('Y');
+                $card->expires = date('Y', strtotime('+4 years', strtotime($today)));
+                $card->card_number = fake()->unique()->creditCardNumber();
+                $card->type = 'K';
                 $credit->save();
+                $card->save();
                 $creditdata->save();
 
                 return view('dashboard');

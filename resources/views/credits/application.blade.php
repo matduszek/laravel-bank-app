@@ -21,7 +21,7 @@
             <!-- Kwota -->
             <div>
                 <x-input-label for="amount" :value="__('Kwota kredytu o jaką sie ubiegasz w PLN')" />
-                <x-text-input id="amount" class="block mt-1 w-full" type="text" name="amount" placeholder="np. 400000" :value="old('amount')" required autofocus />
+                <x-text-input id="amount" class="block mt-1 w-full" type="text" name="amount" placeholder="np. 150000" :value="old('amount')" required autofocus />
                 <x-input-error :messages="$errors->get('amount')" class="mt-2" />
             </div>
 

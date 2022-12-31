@@ -41,4 +41,12 @@ class FooterController extends Controller
     public function account() {
         return view('info.account');
     }
+
+    public function card() {
+        return view('info.card');
+    }
+
+    public function office() {
+        return view('info.office');
+    }
 }

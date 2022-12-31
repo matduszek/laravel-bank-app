@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use App\Models\BankTransaction;
+use App\Models\Card;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Faker\Factory;
@@ -62,13 +63,21 @@ class AccountController extends Controller
             $account->save();
         }else{
             $account = new Account();
+            $card = new Card();
             $account->id_user = Auth::user()->id;
             $account->type = $typ;
             $account->balance = 50;
             $account->account_number = fake()->creditCardNumber();
             $account->blik = 'T';
             $account->currency = $waluta;
+            $card->id_user = Auth::user()->id;
+            $card->cvv = fake()->numberBetween(100,999);
+            $today = date('Y');
+            $card->expires = date('Y', strtotime('+4 years', strtotime($today)));
+            $card->card_number = fake()->unique()->creditCardNumber();
+            $card->type = 'N';
             $account->save();
+            $card->save();
         }
 
         return view('account.success');

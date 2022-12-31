@@ -110,8 +110,14 @@
                         <p class="mb-4">
                             <a href="{{ route('show.insuranceinfo') }}" class="text-gray-600">UBEZPIECZENIA</a>
                         </p>
-                        <p>
+                        <p class="mb-4">
                             <a href="{{ route('show.accountinfo') }}" class="text-gray-600">RACHUNKI BANKOWE</a>
+                        </p>
+                        <p class="mb-4">
+                            <a href="{{ route('show.cardinfo') }}" class="text-gray-600">KARTY WIRTUALNE</a>
+                        </p>
+                        <p class="mb-4">
+                            <a href="{{ route('show.officeinfo') }}" class="text-gray-600">BIURA STACJONARNE</a>
                         </p>
                     </div>
                     <div class="">
