@@ -6,8 +6,8 @@
     </x-slot>
 
     <div class="py-1">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-emerald-900 text-white text-center rounded mx-auto mt-4 w-1/3 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-emerald-900 text-white text-center rounded mx-auto mt-4 w-2/3 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
                     {{ __("TWOJE TRANSAKCJE WYCHODZĄCE") }}
                 </div>

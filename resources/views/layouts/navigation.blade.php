@@ -25,13 +25,13 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.transactions')" :active="request()->routeIs('show.transactions')">
-                        {{ __('Transakcje wych.') }}
+                        {{ __('Tran. wych.') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show2.transactions')" :active="request()->routeIs('show2.accounts')">
-                        {{ __('Transakcje przych.') }}
+                        {{ __('Tran. przych.') }}
                     </x-nav-link>
                 </div>
 
@@ -67,7 +67,7 @@
             </div>
 
             <script>
-                let time = 1 * 60;
+                let time = 10 * 60;
                 let refreshIntervalId = setInterval(updateCountdown, 1000);
 
                 function updateCountdown() {

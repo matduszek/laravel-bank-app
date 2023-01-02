@@ -16,7 +16,53 @@
         }
     </style>
 
-    <div class="text-4xl mt-8 mb-8 text-center">WIRTUALNE KARTY</div>
+    <div class="text-4xl mt-8 mb-8 text-center">WIRTUALNE KARTY <!-- This button is used to open the dialog -->
+        <button id="open" class="py-2 hover:bg-gray-300 text-black cursor-pointer rounded-md">
+            <img src="{{URL::asset('logo/info.png')}}" class="mx-auto" alt="profile Pic" height="30" width="30">
+        </button>
+
+        <!-- Overlay element -->
+        <div id="overlay" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"></div>
+
+        <!-- The dialog -->
+        <div id="dialog"
+             class="hidden fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
+            <h1 class="text-2xl font-semibold">Karty wirtualne</h1>
+            <div class="py-5 text-sm border-t border-b border-gray-300">
+                <p>Karty są jedynie wirtualne, nie ma możliwości zamówienia fizycznej wersji.</p>
+                <br>
+                <p>Generowane są automatycznie przy utworzeniu rachunku walutowego oraz kredytu.</p>
+                <br>
+                <p>Utworzone mogą być maksymalnie 2 karty wirtualne.</p>
+                <br>
+                <p>Karty mają ważność 4 lat.</p>
+            </div>
+            <div class="flex justify-end">
+                <!-- This button is used to close the dialog -->
+                <button id="close" class="px-5 py-2 text-xl bg-indigo-500 hover:bg-indigo-700 text-white cursor-pointer rounded-md">
+                    Zamknij</button>
+            </div>
+        </div></div>
+
+
+    <script>
+        var openButton = document.getElementById('open');
+        var dialog = document.getElementById('dialog');
+        var closeButton = document.getElementById('close');
+        var overlay = document.getElementById('overlay');
+
+        // show the overlay and the dialog
+        openButton.addEventListener('click', function () {
+            dialog.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
+
+        // hide the overlay and the dialog
+        closeButton.addEventListener('click', function () {
+            dialog.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+    </script>
 
     <hr class="w-auto h-1 mb-10 bg-gray-300 opacity-50" />
 

@@ -172,7 +172,8 @@ class CreditController extends Controller
                 $card->save();
                 $creditdata->save();
 
-                return view('dashboard');
+                sleep(2);
+                return view('credits.success');
             }
             return redirect()->back()->with('failed','Nie spełniasz warunków!');
         }
@@ -196,7 +197,8 @@ class CreditController extends Controller
                 $card->save();
                 $creditdata->save();
 
-                return view('dashboard');
+                sleep(2);
+                return view('credits.success');
             }
             return redirect()->back()->with('failed','Nie spełniasz warunków!');
         }
@@ -220,7 +222,8 @@ class CreditController extends Controller
                 $card->save();
                 $creditdata->save();
 
-                return view('dashboard');
+                sleep(2);
+                return view('credits.success');
             }
             return redirect()->back()->with('failed','Nie spełniasz warunków!');
         }
@@ -244,7 +247,8 @@ class CreditController extends Controller
                 $card->save();
                 $creditdata->save();
 
-                return view('dashboard');
+                sleep(2);
+                return view('credits.success');
             }
             return redirect()->back()->with('failed','Nie spełniasz warunków!');
         }

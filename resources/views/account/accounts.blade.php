@@ -94,7 +94,7 @@
 
 
                         @if($x == true && $dupa->blik == 'T')
-                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-gray-700 shadow w-2/12 rounded mx-auto mt-4">
+                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-gray-700 shadow w-3/12 rounded mx-auto mt-4">
                                 <form method="POST" action="{{ route('transaction.show') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$dupa->id_user}}">

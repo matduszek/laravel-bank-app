@@ -7,7 +7,7 @@
 
     @if($x != true)
 
-    <div class="py-12 ">
+    <div class="py-12">
         <div class="max-w-7xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
             <div class="bg-emerald-600 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
                 <div class="p-6 text-xl text-white">
@@ -17,7 +17,21 @@
         </div>
     </div>
 
+    @elseif($x == true)
+
+        <!-- UTWORZONY KREDYT -->
+
     @else
+
+        <div class="py-12">
+            <div class="max-w-7xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
+                <div class="bg-emerald-600 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
+                    <div class="p-6 text-xl text-white">
+                        Aby aplikować o kredyt musisz posiadać konto główne.
+                    </div>
+                </div>
+            </div>
+        </div>
 
     @endif
 

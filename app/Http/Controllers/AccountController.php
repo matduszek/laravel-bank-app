@@ -17,7 +17,16 @@ use Illuminate\Support\Facades\Hash;
 class AccountController extends Controller
 {
     public function add() {
-        return view('account.add');
+        $user = DB::table('accounts')->where('id_user',Auth::user()->id)->first();
+
+        if(!$user){
+            $x = false;
+        }
+        else{
+            $x = true;
+        }
+
+        return view('account.add', ['x' => $x]);
     }
 
     public function save(Request $request)
