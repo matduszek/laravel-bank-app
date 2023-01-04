@@ -44,19 +44,67 @@
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
             </div>
 
-            <!-- Ile juz pracujemy na tej umowie -->
-            <div>
+            <div class="slidecontainer mt-2">
                 <x-input-label for="length" :value="__('Ile juz pracujemy na podanej umowie (msc)')" />
-                <x-text-input id="length" class="block mt-1 w-full" type="text" name="length" placeholder="np. 60" :value="old('length')" required autofocus />
-                <x-input-error :messages="$errors->get('length')" class="mt-2" />
+                <input type="range" min="1" max="600" value="300" class="slider w-full" name="length" id="myRange">
             </div>
 
-            <!-- Dlugosc kredytu -->
-            <div>
-                <x-input-label for="credit_length" :value="__('Okres na jaki chcemy wziąć kredyt (msc)')" />
-                <x-text-input id="credit_length" class="block mt-1 w-full" type="text" name="credit_length" placeholder="np. 60" :value="old('credit_length')" required autofocus />
-                <x-input-error :messages="$errors->get('credit_length')" class="mt-2" />
+            <p class="text-center" id="demo"></p>
+
+            <div class="slidecontainer mt-2">
+                <x-input-label for="length" :value="__('Ilość rat (msc)')" />
+                <input type="range" min="24" max="240" value="132" class="slider w-full" name="credit_length" id="myRange2">
             </div>
+
+            <p class="text-center" id="demo2"></p>
+            <br>
+
+            <button type="button" class="text-xl" onclick="calculateAverageRate()">Oblicz ratę</button> <br>
+            <p class="inline text-sm text-red-800" id="demo3"></p>
+
+            <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+            </script>
+
+            <script>
+                var slider2 = document.getElementById("myRange2");
+                var output2 = document.getElementById("demo2");
+                output2.innerHTML = slider2.value; // Display the default slider value
+
+                // Update the current slider value (each time you drag the slider handle)
+                slider2.oninput = function() {
+                    output2.innerHTML = this.value;
+                }
+            </script>
+
+            <script>
+
+                function calculateAverageRate() {
+                    // Get the values from the form
+                    var num1 = document.getElementById("myRange2").value;
+                    var num2 = document.getElementById("amount").value;
+
+                    // Convert the strings to numbers
+                    num1 = parseFloat(num1);
+                    num2 = parseFloat(num2);
+
+                    // Calculate the average rate
+                    var average = num2/num1;
+
+                    average = Math.round(average);
+
+                    // Display the result
+                    document.getElementById("demo3").innerHTML = 'Rata będzie wynosić w przybliżeniu: ' + average + ' PLN';
+                }
+
+            </script>
 
             @if (\Session::has('low_earnings'))
                 <div class="bg-red-600 mt-8 mb-6 text-center text-white w-auto alert-description">

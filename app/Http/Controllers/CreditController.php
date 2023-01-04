@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use App\Models\Card;
+use App\Models\CreditHistorie;
 use App\Models\Credits;
 use App\Models\Historie;
+use App\Models\User;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +25,7 @@ class CreditController extends Controller
 
         $details = Credits::where('id_user',Auth::user()->id)->get();
 
-        if(!$if_exists && $user){
+        if(!$if_exists && !$user){
             $x = false;
         }
         else{
@@ -126,8 +130,6 @@ class CreditController extends Controller
 
         ]);
 
-
-
         $kwota = $request->input('amount');
         $zarobki = $request->input('earnings');
         $typ_umowy = $request->input('type');
@@ -135,11 +137,22 @@ class CreditController extends Controller
         $na_ile_chcemy_kredyt = $request->input('credit_length');
 
 
+        $date = new DateTime();
+        $date->add(new DateInterval('P'.$na_ile_chcemy_kredyt.'M'));
+        $end_credit = $date->format('d-m-Y');
+
+        $date = new DateTime();
+        $today = ltrim($date->format('d'), '0');
+
         $creditdata = new Credits();
         $creditdata->id_user = Auth::user()->id;
         $creditdata->credit_amount = $kwota;
+        $creditdata->credit_left = $kwota;
         $creditdata->earnings = $zarobki;
         $creditdata->type = $typ_umowy;
+        $creditdata->day_to_pay = $today;
+        $creditdata->end_credit = $end_credit;
+        $creditdata->status = 'during';
         $creditdata->work_length = $ile_pracujemy;
         $creditdata->total_rates = $na_ile_chcemy_kredyt;
         $to_round = ($kwota/$na_ile_chcemy_kredyt);
@@ -255,7 +268,56 @@ class CreditController extends Controller
 
     }
 
+    public function payment(Request $request) {
+        $account = Account::where('id_user',Auth::user()->id)->where('blik','T')->first();
+        $user2 = User::where('phone_number', '222222222')->first();
+        $account2 = Account::where('id_user',$user2->id)->first();
+
+        $credit_left = $request->input('credit_left');
+        $amount = $request->input('amount');
+        $credit_amount = $request->input('credit_amount');
+        $one_rate = $request->input('one_rate');
+        $total_rates = $request->input('total_rates');
+        $end_credit = $request->input('end_credit');
+        $id = $request->input('id');
+
+        if(!$account){
+            return view('failed.not_found');
+        }
+
+        return view('credits.payment', [
+            'account' => $account,
+            'amount' => $amount,
+            'credit_amount' => $credit_amount,
+            'total_rates' => $total_rates,
+            'id_credit' => $id,
+            'end_credit' => $end_credit,
+            'one_rate' => $one_rate,
+            'credit_left' => $credit_left,
+            'special_number' => $account2->account_number,
+        ]);
+    }
+
     public function showapp() {
-        return view('credits.application');
+
+        $exists = Credits::where('id_user',Auth::user()->id)->where('status', 'during')->exists();
+        if ($exists) {
+            return view('failed.credit');
+        } else {
+            return view('credits.application');
+        }
+    }
+
+    public function history() {
+        $credit = CreditHistorie::where('id_user', Auth::user()->id)->get();
+
+        if(!$credit){
+            $x = false;
+        }
+        else{
+            $x = true;
+        }
+
+        return view('credits.history', ['his' => $credit, 'x' => $x]);
     }
 }

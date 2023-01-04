@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use AmrShawky\LaravelCurrency\Facade\Currency;
 use App\Models\Account;
 use App\Models\Busticket;
+use App\Models\CreditHistorie;
+use App\Models\Credits;
 use App\Models\Historie;
 use App\Models\Insurance;
 use App\Models\Roadticket;
@@ -554,6 +556,50 @@ class TransactionController extends Controller
         $type = $request->input('t');
         $typebus = $request->input('z');
         $typeroad = $request->input('b');
+        $credit = $request->input('CRE');
+
+        if($credit == 'CREDIT'){
+            $amount = $request->input('amount');
+            $amount_credit = $request->input('credit_left');
+            $credit_amount = $request->input('credit_amount');
+            $total_rates = $request->input('total_rates');
+            $one_rate = $request->input('one_rate');
+            $end_credit = $request->input('end_credit');
+            $id = $request->input('id');
+
+            if($account->balance < $amount){
+                return view('failed.failed');
+            }
+
+            $creditdata = Credits::where('id_user', Auth::user()->id)->where('status','during')->first();
+
+            $credit_left = $amount_credit - $amount;
+
+            if($credit_left <= 0) {
+                $creditdata->status = 'paid';
+
+                $paid_credit = new CreditHistorie();
+                $paid_credit->id_user = Auth::user()->id;
+                $paid_credit->id_c = $id;
+                $paid_credit->credit_amount = $credit_amount;
+                $paid_credit->total_rates = $total_rates;
+                $paid_credit->end_credit = $end_credit;
+                $paid_credit->status = 'paid';
+                $paid_credit->one_rate = $one_rate;
+                $paid_credit->save();
+
+                $creditdata->update();
+            }
+            else {
+                $creditdata->credit_left = $credit_left;
+
+                $creditdata->update();
+            }
+
+
+
+
+        }
 
         if($typeroad == 'ROAD'){
 

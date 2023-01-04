@@ -9,22 +9,22 @@
     <hr>
 
     @if($blik == 'n')
-        <div class="text-center mt-6 mb-6 text-7xl">
+        <div class="text-center mt-6 mb-6 text-4xl">
             {{ $title }}
         </div>
     @else
-        <div class="text-center mt-6 mb-6 text-7xl">
+        <div class="text-center mt-6 mb-6 text-4xl">
             BLIK
         </div>
     @endif
 
-    <div class="text-center text-4xl">Od: {{$number_account}}</div>
-    <div class="text-center mb-6 text-4xl">Dla: {{$number_account_to}}</div>
-    <div class="text-center text-red-600 text-4xl">Kwota przelewu: -{{$amount}} {{$a_c}}</div>
-    <div class="text-center text-4xl">Saldo przed transakcją: {{$sal_b}} {{$sal_b_c}}</div>
-    <div class="text-center mb-6 text-4xl">Saldo po transakcji: {{$sal_a}} {{$sal_a_c}}</div>
-    <div class="text-center text-4xl">Data transakcji: {{$time}}</div>
-    <div class="text-center text-4xl">Typ transakcji: WYCHODZĄCA</div>
+    <div class="text-center text-3xl">Od: {{$number_account}}</div>
+    <div class="text-center mb-6 text-3xl">Dla: {{$number_account_to}}</div>
+    <div class="text-center text-red-600 text-3xl">Kwota przelewu: -{{$amount}} {{$a_c}}</div>
+    <div class="text-center text-3xl">Saldo przed transakcją: {{$sal_b}} {{$sal_b_c}}</div>
+    <div class="text-center mb-6 text-3xl">Saldo po transakcji: {{$sal_a}} {{$sal_a_c}}</div>
+    <div class="text-center text-3xl">Data transakcji: {{$time}}</div>
+    <div class="text-center text-xl">Typ transakcji: WYCHODZĄCA</div>
 
     <br><br><br><br><br><br><br>
 

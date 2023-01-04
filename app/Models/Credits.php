@@ -9,7 +9,7 @@ class Credits extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    protected $primaryKey = 'id_user';
 
     protected $fillable = [
         'amount',

@@ -135,6 +135,10 @@ Route::middleware('auth')->group(function () {
      *  Karta bankowa
      */
     Route::match(['get','post'],'/cards',[\App\Http\Controllers\CardController::class,'card'])->name('show.card');
+
+    Route::match(['get','post'],'/credit/payment',[\App\Http\Controllers\CreditController::class,'payment'])->name('credit.payment');
+    Route::get('/credit/history',[\App\Http\Controllers\CreditController::class,'history'])->name('show.credits');
+
 });
 
 

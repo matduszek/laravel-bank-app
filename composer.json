@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.7",
         "milon/barcode": "^9.0",
         "mpdf/mpdf": "^6.1",
-        "picqer/php-barcode-generator": "^2.2"
+        "picqer/php-barcode-generator": "^2.2",
+      "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
