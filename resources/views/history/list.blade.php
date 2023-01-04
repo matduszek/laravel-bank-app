@@ -122,7 +122,7 @@
 
 
     <div class="mx-auto text-center justify-center justify-items-center items-center">
-        {{ $list->links() }}
+        {{ $list->links('pagination::bootstrap-4') }}
     </div>
 
 </x-app-layout>

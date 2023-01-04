@@ -107,7 +107,7 @@ class HistoryController extends Controller
             $x = true;
         }
         //->get();
-        $list = Historie::where('id_user',$user)->where('type','W')->orderBy('created_at','desc')->simplePaginate(4);
+        $list = Historie::where('id_user',$user)->where('type','W')->orderBy('created_at','desc')->Paginate(4);
 
         return view('history.list',['list' => $list, 'x' => $x]);
     }
