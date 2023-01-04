@@ -22,6 +22,23 @@
         <a href="{{ route('account.add') }}">Otwórz rachunek</a>
     </div>
 
+    <div class="mt-16 text-2xl text-center">Komunikaty</div>
+
+    <div role="alert">
+        <div class="mt-8 w-1/2 mx-auto bg-red-500 text-white font-bold rounded-t px-4 py-2">
+            Uwaga
+        </div>
+        <div class="w-1/2 mx-auto border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+            <p>Nie wchodź w linki wysyłane przez nieznane numery! My nie wysyłamy takich!</p>
+        </div>
+    </div>
+
+    <div class="mt-10 mx-auto bg-blue-100 w-1/2 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+        <p class="font-bold">Aktualizacja 0.84v </p>
+        <p class="text-sm">Dodano możliwość spłaty kredytu</p>
+    </div>
+
+
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('sucess') }}

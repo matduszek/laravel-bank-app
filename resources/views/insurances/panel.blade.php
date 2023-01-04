@@ -40,7 +40,7 @@
 
     <div class="py-10">
         <div class="max-w-5xl sm:w-20 md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-            <div class="bg-emerald-600 w-5/12 rounded  mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
+            <div class="bg-emerald-900 w-5/12 rounded  mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
                 <div class="p-6 text-2xl text-center text-white">
                         <a href="{{ route('myins.show') }}">Moje ubezpieczenia</a>
                 </div>

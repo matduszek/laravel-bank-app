@@ -10,9 +10,9 @@
 
     @elseif($x == true)
 
-        <div class="py-2">
+        <div class="py-6">
             <div class="max-w-7xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-                <div class="bg-emerald-600 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
+                <div class="bg-emerald-900 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
                     <div class="p-6 text-xl text-white">
                         <a href="{{ route('show.app') }}">Aplikuj o kredyt!</a>
                     </div>
@@ -20,9 +20,11 @@
             </div>
         </div>
 
-        <div class="py-2">
+        <hr class="w-auto h-1 mt-2 bg-gray-300 opacity-50" />
+
+        <div class="py-6">
             <div class="max-w-3xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-                <div class="bg-emerald-600 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
+                <div class="bg-emerald-900 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
                     <div class="p-6 text-xl text-white">
                         <a href="{{ route('show.credits') }}">Historia kredytowa</a>
                     </div>
@@ -34,7 +36,7 @@
 
         <div class="py-12">
             <div class="max-w-7xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-                <div class="bg-emerald-600 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
+                <div class="bg-emerald-900 mx-auto w-4/12 rounded text-center overflow-hidden shadow-amber-700 sm:rounded-lg">
                     <div class="p-6 text-xl text-white">
                         Aby aplikować o kredyt musisz posiadać konto główne.
                     </div>
@@ -43,6 +45,8 @@
         </div>
 
     @endif
+
+    <hr class="w-auto h-1 mt-2 bg-gray-300 opacity-50" />
 
     @foreach($k as $dupa)
         @foreach($det as $d)

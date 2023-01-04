@@ -15,7 +15,7 @@
 
             <div>
                 <x-input-label for="title" :value="__('Tytuł przelewu')" />
-                <x-text-input id="title" class="block mt-1 w-full"  type="text" name="title" value="Rata kredytu" readonly required autofocus />
+                <x-text-input id="title" class="block mt-1 w-full"  type="text" name="title" value="Rata kredytu {{ date('d-m-Y') }}" readonly required autofocus />
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
 

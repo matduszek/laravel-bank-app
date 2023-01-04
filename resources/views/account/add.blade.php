@@ -59,7 +59,6 @@
                 <x-input-label for="type" :value="__('Typ konta')" />
                 <select name="type" id="type">
                     <option value=""></option>
-                    <option value="N">Normalne</option>
                     <option value="S">Oszczednosciowe</option>
                     <option value="CA">Walutowe</option>
                 </select>

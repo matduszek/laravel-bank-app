@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-1">
+    <div class="py-6">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-emerald-900 text-white text-center rounded mx-auto mt-4 w-2/3 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
@@ -15,10 +15,54 @@
         </div>
     </div>
 
+    <div class="text-4xl mt-8 mb-8 text-center">
+        <button id="open" class="py-2 hover:bg-gray-300 text-black cursor-pointer rounded-md">
+            <div class="inline text-xl">Jak wygenerować pdf przy potwierdzeniu? <img src="{{URL::asset('logo/pdf.png')}}" class="mx-auto" alt="profile Pic" height="30" width="30"></div>
+        </button>
+
+        <!-- Overlay element -->
+        <div id="overlay" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"></div>
+
+        <!-- The dialog -->
+        <div id="dialog"
+             class="hidden fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
+            <div class="py-5 text-sm border-t border-b border-gray-300">
+                <p>Kliknij na pole 'Urządzenie docelowe', wybierz 'Zapisz jako PDF' i kliknij zapisz.</p>
+                <br>
+                <p>Wskaż miejsce na które ma zostać zapisany pdf i zapisz.</p>
+                <br>
+                <p>Wersja Windows 11.</p>
+            </div>
+            <div class="flex justify-end">
+                <!-- This button is used to close the dialog -->
+                <button id="close" class="px-5 py-2 text-xl bg-indigo-500 hover:bg-indigo-700 text-white cursor-pointer rounded-md">
+                    Zamknij</button>
+            </div>
+        </div></div>
+
+    <script>
+        var openButton = document.getElementById('open');
+        var dialog = document.getElementById('dialog');
+        var closeButton = document.getElementById('close');
+        var overlay = document.getElementById('overlay');
+
+        // show the overlay and the dialog
+        openButton.addEventListener('click', function () {
+            dialog.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
+
+        // hide the overlay and the dialog
+        closeButton.addEventListener('click', function () {
+            dialog.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+    </script>
+
     @if($x == true)
 
     @foreach($list as $his)
-        <div class="py-10">
+        <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 @if($his->blik == 'n')
                             <div class="bg-gray-200 overflow-hidden shadow-sm sm:rounded-lg">
