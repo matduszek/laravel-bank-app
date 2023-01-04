@@ -31,9 +31,7 @@
             <div class="py-5 text-sm border-t border-b border-gray-300">
                 <p>Karty są jedynie wirtualne, nie ma możliwości zamówienia fizycznej wersji.</p>
                 <br>
-                <p>Generowane są automatycznie przy utworzeniu rachunku walutowego oraz kredytu.</p>
-                <br>
-                <p>Utworzone mogą być maksymalnie 2 karty wirtualne.</p>
+                <p>Generowane są automatycznie przy utworzeniu rachunku walutowego oraz kredytów.</p>
                 <br>
                 <p>Karty mają ważność 4 lat.</p>
             </div>

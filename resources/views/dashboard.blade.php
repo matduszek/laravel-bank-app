@@ -18,14 +18,16 @@
         </div>
     </div>
 
-    <div class="text-center text-4xl shadow">
+    <div class="text-center mx-auto rounded w-1/3 bg-gray-200 hover:bg-gray-300 text-4xl shadow">
         <a href="{{ route('account.add') }}">Otwórz rachunek</a>
     </div>
 
-    <div class="mt-16 text-2xl text-center">Komunikaty</div>
+    <hr class="w-auto h-1 mt-12 bg-gray-300 opacity-50" />
+
+    <div class="mt-4 text-2xl text-center">Komunikaty</div>
 
     <div role="alert">
-        <div class="mt-8 w-1/2 mx-auto bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        <div class="mt-4 w-1/2 mx-auto bg-red-500 text-white font-bold rounded-t px-4 py-2">
             Uwaga
         </div>
         <div class="w-1/2 mx-auto border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
