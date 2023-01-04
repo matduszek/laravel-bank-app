@@ -7,6 +7,63 @@
         </x-slot>
         <div class="text-4xl text-center mx-auto mb-6 font-bold">Ubezpieczenie OC (1 ROK)</div>
 
+        <!-- component -->
+        <div class="max-w-xl mx-auto my-4 border-b-2 pb-4">
+            <div class="flex pb-3">
+                <div class="flex-1">
+                </div>
+
+                <div class="flex-1">
+                    <div class="w-10 h-10 bg-green-500 mx-auto rounded-full text-lg text-white flex items-center">
+                        <span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white">1</i></span>
+                    </div>
+                </div>
+
+
+                <div class="w-1/6 align-center items-center align-middle content-center flex">
+                    <div class="w-full bg-green-500 rounded items-center align-middle align-center flex-1">
+                        <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 100%"></div>
+                    </div>
+                </div>
+
+
+                <div class="flex-1">
+                    <div class="w-10 h-10 bg-green-500 mx-auto rounded-full text-lg text-white flex items-center">
+                        <span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white">2</i></span>
+                    </div>
+                </div>
+
+                <div class="w-1/6 align-center items-center align-middle content-center flex">
+                    <div class="w-full bg-green-500 rounded items-center align-middle align-center flex-1">
+                        <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <div class="w-10 h-10 bg-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
+                        <span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white">3</i></span>
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                </div>
+            </div>
+
+            <div class="flex text-xs content-center text-center">
+                <div class="w-1/3">
+                    Formularz
+                </div>
+
+                <div class="w-1/3">
+                    Potwierdzenie
+                </div>
+
+                <div class="w-1/3">
+                    Płatność
+                </div>
+            </div>
+        </div>
+
         <div class="text-xl text-left">Marka: {{ $brand }}</div>
         <div class="text-xl text-left">Pojemność silnika: {{ $cap }}</div>
         <div class="text-xl text-left">Wartośc pojazdu: {{ $value }}</div>
