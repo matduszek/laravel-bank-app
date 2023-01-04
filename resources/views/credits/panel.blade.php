@@ -60,9 +60,36 @@
                             <div class="text-white mb-3 text-center">Typ umowy: @if($d->type == "UOP") UMOWA O PRACE @else UMOWA ZLECENIE @endif</div>
                             <div class="text-white mb-3 text-center">Liczba rat: {{ $d->total_rates }}</div>
                             <div class="text-white mb-3 text-2xl text-center">Rata wynosi: {{ $d->one_rate }} PLN</div>
-                            <div class="text-white mb-3 text-center">Pozostało do spłaty: {{ $d->credit_left }} PLN</div>
                             <div class="text-white mb-3 text-center">Płatne do {{ $d->day_to_pay }} dnia każdego miesiąca.</div>
                             <div class="text-white mb-3 text-center">Koniec kredytu: {{ $d->end_credit }} </div>
+
+                        <div class="text-4xl mt-8 mb-8 text-white text-center">Pozostało do spłaty: {{ $d->credit_left }} PLN <!-- This button is used to open the dialog -->
+                            <button id="open" class="py-2 hover:bg-gray-300 text-black cursor-pointer rounded-md">
+                                <img src="{{URL::asset('logo/info.png')}}" class="mx-auto" alt="profile Pic" height="30" width="30">
+                            </button>
+
+                            <!-- Overlay element -->
+                            <div id="overlay" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"></div>
+
+                            <!-- The dialog -->
+                            <div id="dialog"
+                                 class="hidden fixed z-50 text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
+                                <h1 class="text-2xl text-black font-semibold">Karty wirtualne</h1>
+                                <div class="py-5 text-sm text-black border-t border-b border-gray-300">
+                                    <p>Liczba rat: {{ $d->total_rates }}</p>
+                                    <br>
+                                    <p class="text-red-600">Pozostało rat: {{ $d->rates_left }}</p>
+                                    <br>
+                                    <p class="text-green-600">Zapłacono rat: {{ abs($d->total_rates-$d->rates_left) }} </p>
+                                    <br>
+                                    <p>Karty mają ważność 4 lat.</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <!-- This button is used to close the dialog -->
+                                    <button id="close" class="px-5 py-2 text-xl bg-indigo-500 hover:bg-indigo-700 text-white cursor-pointer rounded-md">
+                                        Zamknij</button>
+                                </div>
+                            </div></div>
 
                         <form method="POST" action="{{ route('credit.payment') }}">
                             @csrf
@@ -78,29 +105,39 @@
 
                             <div class="flex items-center justify-end mt-4">
                                 <x-primary-button class="mx-auto">
-                                    {{ __('Zapłać') }}
+                                    {{ __('Zapłać ratę kredytu') }}
                                 </x-primary-button>
                             </div>
 
                         </form>
                         @else
-
-
                         @endif
                         @endforeach
-
-
                     </div>
                 </div>
             </div>
         </div>
             @break(1)
-
-
-
-
-
         @endforeach
 
+
+                <script>
+                    var openButton = document.getElementById('open');
+                    var dialog = document.getElementById('dialog');
+                    var closeButton = document.getElementById('close');
+                    var overlay = document.getElementById('overlay');
+
+                    // show the overlay and the dialog
+                    openButton.addEventListener('click', function () {
+                        dialog.classList.remove('hidden');
+                        overlay.classList.remove('hidden');
+                    });
+
+                    // hide the overlay and the dialog
+                    closeButton.addEventListener('click', function () {
+                        dialog.classList.add('hidden');
+                        overlay.classList.add('hidden');
+                    });
+                </script>
 
 </x-app-layout>

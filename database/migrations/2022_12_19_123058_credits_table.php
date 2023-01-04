@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('work_length');
             $table->integer('total_rates');
+            $table->integer('rates_left');
             $table->string('day_to_pay');
             $table->string('end_credit');
             $table->string('status');

@@ -591,7 +591,12 @@ class TransactionController extends Controller
                 $creditdata->update();
             }
             else {
+                $rates = $creditdata->rates_left;
+                $rates--;
+
                 $creditdata->credit_left = $credit_left;
+
+                $creditdata->rates_left = $rates;
 
                 $creditdata->update();
             }

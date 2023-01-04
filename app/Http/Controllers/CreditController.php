@@ -25,6 +25,7 @@ class CreditController extends Controller
 
         $details = Credits::where('id_user',Auth::user()->id)->get();
 
+
         if(!$if_exists && !$user){
             $x = false;
         }
@@ -155,6 +156,7 @@ class CreditController extends Controller
         $creditdata->status = 'during';
         $creditdata->work_length = $ile_pracujemy;
         $creditdata->total_rates = $na_ile_chcemy_kredyt;
+        $creditdata->rates_left = $na_ile_chcemy_kredyt;
         $to_round = ($kwota/$na_ile_chcemy_kredyt);
         $creditdata->one_rate = round($to_round, 2);
 
