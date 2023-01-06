@@ -78,15 +78,13 @@
                             <!-- The dialog -->
                             <div id="dialog"
                                  class="hidden fixed z-50 text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
-                                <h1 class="text-2xl text-black font-semibold">Karty wirtualne</h1>
+                                <h1 class="text-2xl text-black font-semibold">Raty</h1>
                                 <div class="py-5 text-sm text-black border-t border-b border-gray-300">
                                     <p>Liczba rat: {{ $d->total_rates }}</p>
                                     <br>
                                     <p class="text-red-600">Pozostało rat: {{ $d->rates_left }}</p>
                                     <br>
                                     <p class="text-green-600">Zapłacono rat: {{ abs($d->total_rates-$d->rates_left) }} </p>
-                                    <br>
-                                    <p>Karty mają ważność 4 lat.</p>
                                 </div>
                                 <div class="flex justify-end">
                                     <!-- This button is used to close the dialog -->

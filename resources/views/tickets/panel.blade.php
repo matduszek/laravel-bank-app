@@ -20,31 +20,35 @@
             <th class="text-xl">Opłata autostradowa</th>
         </tr>
         <tr>
-            <th class="text-2xl"><div class="bg-red-800 text-white"><a href="{{ route('bus.check') }}">Zobacz</a></div></th>
-            <th class="text-2xl"><div class="bg-orange-500 text-white"><a href="{{ route('road.check') }}">Zobacz</a></th>
+            <th class="text-2xl"><a href="{{ route('bus.check') }}"><div class="bg-red-800 hover:bg-red-700 text-white">Zobacz</div></a></th>
+            <th class="text-2xl"><a href="{{ route('road.check') }}"><div class="bg-orange-500 hover:bg-orange-400 text-white">Zobacz</div></a></th>
         </tr>
         <tr>
             <th>
-                <div class="py-5">
-                    <div class="max-w-2xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-emerald-900 w-8/12 text-center mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
-                            <div class="p-6 text-sm text-white">
-                                <a href="{{ route('show.bustickets') }}">Moje bilety komunikacyjne</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </th>
-            <th>
-                <div class="py-5">
+                <a href="{{ route('show.bustickets') }}">
+                    <div class="py-12">
                         <div class="max-w-2xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-                            <div class="bg-emerald-900 w-8/12 text-center mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
+                            <div class="bg-emerald-900 hover:bg-emerald-800 w-8/12 text-center mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
                                 <div class="p-6 text-sm text-white">
-                                    <a href="{{ route('show.roadtickets') }}">Moje bilety autostradowe</a>
+                                    Moje bilety komunikacyjne
                                 </div>
                             </div>
                         </div>
                     </div>
+                </a>
+            </th>
+            <th>
+                <a href="{{ route('show.roadtickets') }}">
+                    <div class="py-12">
+                        <div class="max-w-2xl sm:w-auto md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
+                            <div class="bg-emerald-900 hover:bg-emerald-800 w-8/12 text-center mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
+                                <div class="p-6 text-sm text-white">
+                                    Moje bilety autostradowe
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </th>
         </tr>
     </table>

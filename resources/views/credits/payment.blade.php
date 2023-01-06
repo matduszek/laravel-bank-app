@@ -5,7 +5,7 @@
 
             </a>
         </x-slot>
-        <h2 class="text-4xl font-bold text-center">Bilet</h2>
+        <h2 class="text-4xl font-bold text-center">Rata kredytu</h2>
         <br>
         <h6 class="text-xl font-bold text-left">Saldo: {{$account->balance}} {{ $account->currency }}</h6>
         <h6 class="text-xl font-bold text-left">Numer rachunku: {{ $account->account_number}}</h6>
@@ -74,7 +74,7 @@
         </form>
 
         <div class="block mt-8">
-            <h7 class="text-xl text-center"><a href="{{route('show.tickets')}}">POWRÓT</a></h7>
+            <h7 class="text-xl text-center"><a href="{{route('credit.panel')}}">POWRÓT</a></h7>
         </div>
     </x-auth-card>
 </x-guest-layout>

@@ -46,13 +46,21 @@ class CreditController extends Controller
             'credit_length' => ['required', 'int']
         ]);
 
+        if(!function_exists('ceiling') )
+        {
+            function ceiling($number, $significance = 1)
+            {
+                return ( is_numeric($number) && is_numeric($significance) ) ? (ceil($number/$significance)*$significance) : false;
+            }
+        }
+
         $ammount = $request->input('amount');
         $earnings = $request->input('earnings');
         $type_contract = $request->input('type');
         $work_time = $request->input('length');
         $how_long_credit = $request->input('credit_length');
         $to_round = ($ammount/$how_long_credit);
-        $one_rate = round($to_round,2);
+        $one_rate = ceiling($to_round, 0.10);
 
         if($earnings < 2000) {
             return redirect()->back()->with('low_earnings','Za małe zarobki żeby wziąć kredyt!');
@@ -145,6 +153,14 @@ class CreditController extends Controller
         $date = new DateTime();
         $today = ltrim($date->format('d'), '0');
 
+        if(!function_exists('ceiling') )
+        {
+            function ceiling($number, $significance = 1)
+            {
+                return ( is_numeric($number) && is_numeric($significance) ) ? (ceil($number/$significance)*$significance) : false;
+            }
+        }
+
         $creditdata = new Credits();
         $creditdata->id_user = Auth::user()->id;
         $creditdata->credit_amount = $kwota;
@@ -158,7 +174,7 @@ class CreditController extends Controller
         $creditdata->total_rates = $na_ile_chcemy_kredyt;
         $creditdata->rates_left = $na_ile_chcemy_kredyt;
         $to_round = ($kwota/$na_ile_chcemy_kredyt);
-        $creditdata->one_rate = round($to_round, 2);
+        $creditdata->one_rate = ceiling($to_round, 0.10);
 
 
         if($zarobki < 2000) {

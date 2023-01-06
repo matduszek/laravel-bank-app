@@ -90,9 +90,9 @@
 
                 @endforeach
 
-                <div class="mx-auto text-center justify-center justify-items-center items-center">
-                    {{ $ins->links() }}
-                </div>
+    <div class="right-0">
+        {{ $list->links('vendor.pagination.tailwind') }}
+    </div>
             </div>
 </x-app-layout>
 

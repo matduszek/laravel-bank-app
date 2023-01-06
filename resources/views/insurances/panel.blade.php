@@ -8,15 +8,15 @@
 
     <table class="mt-8 border-collapse table-auto w-full whitespace-no-wrap table-striped relative">
         <tr>
-            <th class="text-4xl"><div>
+            <th class="text-4xl w-1/3"><div>
                     <img class="mx-auto w-12 md:w-32 lg:w-48" src="{{URL::asset('logo/life.png')}}"  alt="profile Pic" height="200" width="200">
                 </div></th>
             <th></th>
-            <th class="text-4xl"><div>
-                    <img src="{{URL::asset('logo/car.png')}}" class="mx-auto w-12 md:w-32 lg:w-48" alt="profile Pic" height="200" width="200">
+            <th class="text-4xl w-1/3"><div>
+                    <img src="{{URL::asset('logo/hatchback.png')}}" class="mx-auto w-12 md:w-32 lg:w-48" alt="profile Pic" height="200" width="200">
                 </div></th>
             <th></th>
-            <th class="text-4xl"><div>
+            <th class="text-4xl w-1/3"><div>
                     <img src="{{URL::asset('logo/town.png')}}" class="mx-auto w-12 md:w-32 lg:w-48" alt="profile Pic" height="200" width="200">
                 </div></th>
         </tr>

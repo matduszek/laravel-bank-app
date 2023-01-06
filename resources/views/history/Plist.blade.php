@@ -127,9 +127,9 @@
     @endif
 
 
-    <div class="mx-auto text-center justify-center justify-items-center items-center">
-        {{ $list->links() }}
-    </div>
+                <div class="right-0">
+                    {{ $list->links('vendor.pagination.tailwind') }}
+                </div>
 
 </x-app-layout>
 

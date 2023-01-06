@@ -33,7 +33,7 @@
                     @elseif($dupa->type == 'K')
                         <div class="bg-pink-900 overflow-hidden shadow-sm sm:rounded-lg">
                             @else
-                        <div class="bg-white text-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="bg-blue-200 text-white overflow-hidden shadow-sm sm:rounded-lg">
                     @endif
                     <div class="p-6 text-gray-900">
                         <div class="text-left text-xl">
@@ -42,8 +42,10 @@
                                 <div class="text-left mb-3 text-xl">KONTO Z BLIKIEM</div>
                             @elseif($dupa->type == 'K')
                                 <div class="text-white text-5xl mb-3 font-bold text-center">KREDYT</div>
-                            @else
-
+                            @elseif($dupa->type == 'CA')
+                                <div class="text-black text-3xl mb-3 font-bold text-center">WALUTOWE</div>
+                            @elseif($dupa->type == 'S')
+                                <div class="text-black text-3xl mb-3 font-bold text-center">OSZCZĘDNOŚCIOWE</div>
                             @endif
                         </div>
                         @if($dupa->type == 'K')
@@ -78,7 +80,7 @@
 
 
                         @if($dupa->type == 'K')
-                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-lime-500 shadow">
+                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl  bg-lime-500 hover:bg-lime-600 shadow">
                                 <form method="POST" action="{{ route('transaction.edit') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$dupa->id_account}}">
