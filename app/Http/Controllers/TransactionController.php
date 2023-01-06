@@ -9,6 +9,7 @@ use App\Models\CreditHistorie;
 use App\Models\Credits;
 use App\Models\Historie;
 use App\Models\Insurance;
+use App\Models\Investment;
 use App\Models\Roadticket;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -553,10 +554,45 @@ class TransactionController extends Controller
         $account_id = $request->input('t_id');
         $account = Account::where('id_account', $account_id)->first();
 
+
         $type = $request->input('t');
         $typebus = $request->input('z');
         $typeroad = $request->input('b');
         $credit = $request->input('CRE');
+
+        $investment = $request->input('INVES');
+
+        if($investment == 'INVES'){
+            $amount = $request->input('amount');
+
+            if($account->balance < $amount){
+                return view('failed.failed');
+            }
+
+            $account_inv = Investment::where('id_user',Auth::user()->id)->first();
+
+            $account_inv->amount = $account_inv->amount + $amount;
+
+            $account_inv->update();
+        }
+
+        if($investment == 'WITH'){
+            $amount = $request->input('amount');
+
+            if($account->balance < $amount){
+                return view('failed.failed');
+            }
+
+            $account_inv = Investment::where('id_user',Auth::user()->id)->first();
+
+            $account_inv->amount = $account_inv->amount - $amount;
+
+            if($account_inv->amount <= 0) {
+                $account_inv->amount = 0;
+            }
+
+            $account_inv->update();
+        }
 
         if($credit == 'CREDIT'){
             $amount = $request->input('amount');
@@ -734,8 +770,8 @@ class TransactionController extends Controller
             $history->currency = "PLN";
             $history->currency_to = "EUR";
             $history->currency_exchange = Currency::convert()
-                ->from('PLN')
-                ->to('EUR')
+                ->from('EUR')
+                ->to('PLN')
                 ->get();
             $account2->balance = ($account2->balance + $kwotaEUR);
             $history2->currency = "PLN";
@@ -762,8 +798,8 @@ class TransactionController extends Controller
             $history->currency = "PLN";
             $history->currency_to = "CHF";
             $history->currency_exchange = Currency::convert()
-                ->from('PLN')
-                ->to('CHF')
+                ->from('CHF')
+                ->to('PLN')
                 ->get();
             $account2->balance = ($account2->balance + $kwotaCHF);
             $history2->currency = "PLN";
@@ -790,8 +826,8 @@ class TransactionController extends Controller
             $history->currency = "PLN";
             $history->currency_to = "USD";
             $history->currency_exchange = Currency::convert()
-                ->from('PLN')
-                ->to('USD')
+                ->from('USD')
+                ->to('PLN')
                 ->get();
             $account2->balance = ($account2->balance + $kwotaUSD);
             $history2->currency = "PLN";
@@ -818,8 +854,8 @@ class TransactionController extends Controller
             $history->currency = "PLN";
             $history->currency_to = "GBP";
             $history->currency_exchange = Currency::convert()
-                ->from('PLN')
-                ->to('GBP')
+                ->from('GBP')
+                ->to('PLN')
                 ->get();
             $account2->balance = ($account2->balance + $kwotaGBP);
             $history2->currency = "PLN";
@@ -888,8 +924,8 @@ class TransactionController extends Controller
             $history->currency = "EUR";
             $history->currency_to = "CHF";
             $history->currency_exchange = Currency::convert()
-                ->from('EUR')
-                ->to('CHF')
+                ->from('CHF')
+                ->to('EUR')
                 ->get();
             $history->type = "W";
         }
@@ -916,8 +952,8 @@ class TransactionController extends Controller
             $history->currency = "EUR";
             $history->currency_to = "USD";
             $history->currency_exchange = Currency::convert()
-                ->from('EUR')
-                ->to('USD')
+                ->from('USD')
+                ->to('EUR')
                 ->get();
             $history->type = "W";
 
@@ -945,8 +981,8 @@ class TransactionController extends Controller
             $history->currency = "EUR";
             $history->currency_to = "GBP";
             $history->currency_exchange = Currency::convert()
-                ->from('EUR')
-                ->to('GBP')
+                ->from('GBP')
+                ->to('EUR')
                 ->get();
             $history->type = "W";
         }
@@ -973,8 +1009,8 @@ class TransactionController extends Controller
             $history->currency = "EUR";
             $history->currency_to = "PLN";
             $history->currency_exchange = Currency::convert()
-                ->from('EUR')
-                ->to('PLN')
+                ->from('PLN')
+                ->to('EUR')
                 ->get();
             $history->type = "W";
         }
@@ -1018,8 +1054,8 @@ class TransactionController extends Controller
             $history->currency = "CHF";
             $history->currency_to = "EUR";
             $history->currency_exchange = Currency::convert()
-                ->from('CHF')
-                ->to('EUR')
+                ->from('EUR')
+                ->to('CHF')
                 ->get();
             $history->type = "W";
         }
@@ -1046,8 +1082,8 @@ class TransactionController extends Controller
             $history->currency = "CHF";
             $history->currency_to = "USD";
             $history->currency_exchange = Currency::convert()
-                ->from('CHF')
-                ->to('USD')
+                ->from('USD')
+                ->to('CHF')
                 ->get();
             $history->type = "W";
         }
@@ -1074,8 +1110,8 @@ class TransactionController extends Controller
             $history->currency = "CHF";
             $history->currency_to = "GBP";
             $history->currency_exchange = Currency::convert()
-                ->from('CHF')
-                ->to('GBP')
+                ->from('GBP')
+                ->to('CHF')
                 ->get();
             $history->type = "W";
         }
@@ -1102,8 +1138,8 @@ class TransactionController extends Controller
             $history->currency = "CHF";
             $history->currency_to = "PLN";
             $history->currency_exchange = Currency::convert()
-                ->from('CHF')
-                ->to('PLN')
+                ->from('PLN')
+                ->to('CHF')
                 ->get();
             $history->type = "W";
         }
@@ -1148,8 +1184,8 @@ class TransactionController extends Controller
             $history->currency = "GBP";
             $history->currency_to = "EUR";
             $history->currency_exchange = Currency::convert()
-                ->from('GBP')
-                ->to('EUR')
+                ->from('EUR')
+                ->to('GBP')
                 ->get();
             $history->type = "W";
         }
@@ -1176,8 +1212,8 @@ class TransactionController extends Controller
             $history->currency = "GBP";
             $history->currency_to = "USD";
             $history->currency_exchange = Currency::convert()
-                ->from('GBP')
-                ->to('USD')
+                ->from('USD')
+                ->to('GBP')
                 ->get();
             $history->type = "W";
         }
@@ -1204,8 +1240,8 @@ class TransactionController extends Controller
             $history->currency = "GBP";
             $history->currency_to = "CHF";
             $history->currency_exchange = Currency::convert()
-                ->from('GBP')
-                ->to('CHF')
+                ->from('CHF')
+                ->to('GBP')
                 ->get();
             $history->type = "W";
         }
@@ -1232,8 +1268,8 @@ class TransactionController extends Controller
             $history->currency = "GBP";
             $history->currency_to = "PLN";
             $history->currency_exchange = Currency::convert()
-                ->from('GBP')
-                ->to('PLN')
+                ->from('PLN')
+                ->to('GBP')
                 ->get();
             $history->type = "W";
         }
@@ -1277,8 +1313,8 @@ class TransactionController extends Controller
             $history->currency = "USD";
             $history->currency_to = "EUR";
             $history->currency_exchange = Currency::convert()
-                ->from('USD')
-                ->to('EUR')
+                ->from('EUR')
+                ->to('USD')
                 ->get();
             $history->type = "W";
         }
@@ -1305,8 +1341,8 @@ class TransactionController extends Controller
             $history->currency = "USD";
             $history->currency_to = "GBP";
             $history->currency_exchange = Currency::convert()
-                ->from('USD')
-                ->to('GBP')
+                ->from('GBP')
+                ->to('USD')
                 ->get();
             $history->type = "W";
         }
@@ -1333,8 +1369,8 @@ class TransactionController extends Controller
             $history->currency = "USD";
             $history->currency_to = "CHF";
             $history->currency_exchange = Currency::convert()
-                ->from('USD')
-                ->to('CHF')
+                ->from('CHF')
+                ->to('USD')
                 ->get();
             $history->type = "W";
         }
@@ -1361,8 +1397,8 @@ class TransactionController extends Controller
             $history->currency = "USD";
             $history->currency_to = "PLN";
             $history->currency_exchange = Currency::convert()
-                ->from('USD')
-                ->to('PLN')
+                ->from('PLN')
+                ->to('USD')
                 ->get();
             $history->type = "W";
         }
@@ -1371,7 +1407,7 @@ class TransactionController extends Controller
         $account->save();
         $account2->save();
 
-        sleep(3);
+        sleep(1);
 
         return view('transaction.success');
 

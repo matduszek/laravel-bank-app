@@ -16,11 +16,11 @@
 
         3. System bankowy sprawdza poprawność danych i, jeśli wszystko jest w porządku, przeprowadza przelew z konta użytkownika na konto odbiorcy.<br><br>
 
-        4. Przelew jest zwykle widoczny na koncie odbiorcy w ciągu kilku chwil. Można zobaczyć transakcje w zakładce 'Transakcje wych.' lub 'Transakcje przych.'<br><br>
+        4. Przelew jest zwykle widoczny na koncie odbiorcy w ciągu kilku chwil. Można zobaczyć transakcje w zakładce 'Tran. wych.' lub 'Tran. przych.'<br><br>
 
         5. Przelewy internetowe umożliwiają szybkie i łatwe przesyłanie pieniędzy bez konieczności wychodzenia z domu czy korzystania z bankomatu. Są one również bezpieczne, ponieważ dane użytkowników są chronione przez mechanizmy zabezpieczeń bankowości internetowej.<br><br>
 
-        6. Maksymalna kwota przelewu to 20000 PLN (POZOSTAŁE WALUTY SĄ PRZEWALUTOWANE I JEST TO RÓWNOWARTOŚĆ KWOTY W PLN). Aby przelać większe kwoty, należy się udać do punktu stacjonarnego i wyepłnić formularz a następnie umówić przelew z naszym specjalistą.'<br><br>
+        6. Przelewy są przewalutowane po oficjalnych kursach, które klient może zobaczyć w zakładce 'Kantor'<br><br>
         <br><br>
     </div>
 </x-app-layout>

@@ -131,6 +131,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/account/info',[\App\Http\Controllers\FooterController::class,'account'])->name('show.accountinfo');
     Route::get('/card/info',[\App\Http\Controllers\FooterController::class,'card'])->name('show.cardinfo');
     Route::get('/office/info',[\App\Http\Controllers\FooterController::class,'office'])->name('show.officeinfo');
+    Route::get('/investment/info',[\App\Http\Controllers\FooterController::class,'investment'])->name('show.investmentinfo');
     /*
      *  Karta bankowa
      */
@@ -138,6 +139,16 @@ Route::middleware('auth')->group(function () {
 
     Route::match(['get','post'],'/credit/payment',[\App\Http\Controllers\CreditController::class,'payment'])->name('credit.payment');
     Route::get('/credit/history',[\App\Http\Controllers\CreditController::class,'history'])->name('show.credits');
+
+    Route::get('/investments',[\App\Http\Controllers\InvestmentController::class,'show'])->name('show.investments');
+
+    Route::match(['get','post'],'/investments/create',[\App\Http\Controllers\InvestmentController::class,'create'])->name('create.inv');
+
+    Route::match(['get','post'],'/investments/save',[\App\Http\Controllers\InvestmentController::class,'save'])->name('investment.save');
+
+    Route::match(['get','post'],'/investments/payment',[\App\Http\Controllers\InvestmentController::class,'payment'])->name('investment.payment');
+
+    Route::match(['get','post'],'/investments/withdraw',[\App\Http\Controllers\InvestmentController::class,'withdraw'])->name('investment.withdraw');
 
 });
 

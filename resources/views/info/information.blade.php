@@ -68,7 +68,7 @@
                     label: "Czas godzin pracy [h]",
                     backgroundColor: "hsl(252, 82.9%, 67.8%)",
                     borderColor: "hsl(252, 82.9%, 67.8%)",
-                    data: [4, 2, 1, 50, 10, 7, 8],
+                    data: [4, 5, 3, 55, 12, 8, 10],
                 },
             ],
         };

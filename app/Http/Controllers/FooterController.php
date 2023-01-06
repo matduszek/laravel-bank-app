@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
+    public function investment() {
+        return view('info.investment');
+    }
+
     public function statute() {
         return view('info.statute');
     }

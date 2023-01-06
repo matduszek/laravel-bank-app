@@ -28,24 +28,27 @@
             <th class="text-xl">Ubezpieczenie na nieruchomość</th>
         </tr>
         <tr>
-            <th class="text-2xl"><div class="bg-green-600 text-white"><a href="{{route('life.check')}}">Zobacz</a></div></th>
+            <th class="text-2xl"><div class="bg-green-600 hover:bg-green-700 text-white"><a href="{{route('life.check')}}">Zobacz</a></div></th>
             <th></th>
-            <th class="text-2xl"><div class="bg-gray-600 text-white"><a href="{{ route('car.check') }}">Zobacz</a></div></th>
+            <th class="text-2xl"><div class="bg-green-600 hover:bg-green-700 text-white"><a href="{{ route('car.check') }}">Zobacz</a></div></th>
             <th></th>
-            <th class="text-2xl"><div class="bg-green-600 text-white"><a href="{{ route('property.check') }}">Zobacz</a></div></th>
+            <th class="text-2xl"><div class="bg-green-600 hover:bg-green-700 text-white"><a href="{{ route('property.check') }}">Zobacz</a></div></th>
         </tr>
     </table>
 
     <hr class="w-auto h-1 mt-10 bg-gray-300 opacity-50" />
 
-    <div class="py-10">
-        <div class="max-w-5xl sm:w-20 md:w-auto lg:w-auto mx-auto sm:px-6 lg:px-8">
-            <div class="bg-emerald-900 w-5/12 rounded  mx-auto overflow-hidden shadow-amber-700 sm:rounded-lg">
-                <div class="p-6 text-2xl text-center text-white">
-                        <a href="{{ route('myins.show') }}">Moje ubezpieczenia</a>
+    <a href="{{ route('myins.show') }}">
+        <div class="py-1">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-emerald-900 hover:bg-emerald-800 text-white text-center rounded mx-auto mt-4 w-1/3 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-white">
+                        {{ __("Moje ubezpieczenia") }}
+                    </div>
                 </div>
             </div>
-          </div>
-      </div>
+        </div>
+    </a>
+
     </div>
 </x-app-layout>

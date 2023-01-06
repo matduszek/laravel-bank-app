@@ -67,7 +67,7 @@
 
             <!-- Zarobki -->
             <div>
-                <x-input-label for="earnings" :value="__('Średnie zarobki przez okres ostatnich 6 miesiecy')" />
+                <x-input-label for="earnings" :value="__('Średnie zarobki netto przez okres ostatnich 6 miesiecy')" />
                 <x-text-input id="earnings" class="block mt-1 w-full" type="text" name="earnings" placeholder="np. 4300" :value="old('earnings')" required autofocus />
                 <x-input-error :messages="$errors->get('earnings')" class="mt-2" />
             </div>

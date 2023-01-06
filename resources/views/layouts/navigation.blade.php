@@ -6,62 +6,68 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('/logo/slogan.png') }}" width="200px">
+                        <img src="{{ asset('/logo/slogan.png') }}" width="110px">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Panel główny') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.accounts')" :active="request()->routeIs('show.accounts')">
                         {{ __('Moje konta') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.transactions')" :active="request()->routeIs('show.transactions')">
                         {{ __('Tran. wych.') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show2.transactions')" :active="request()->routeIs('show2.accounts')">
                         {{ __('Tran. przych.') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('currency.panel')" :active="request()->routeIs('currency.panel')">
                         {{ __('Kantor') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.tickets')" :active="request()->routeIs('show.tickets')">
                         {{ __('Bilety') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('credit.panel')" :active="request()->routeIs('credit.panel')">
                         {{ __('Kredyty') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('insurance.panel')" :active="request()->routeIs('insurance.panel')">
                         {{ __('Ubezpieczenia') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.card')" :active="request()->routeIs('show.card')">
                         {{ __('Karty') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('show.investments')" :active="request()->routeIs('show.investments')">
+                        {{ __('Lokaty') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -185,6 +191,10 @@
 
                 <x-responsive-nav-link :href="route('show.card')">
                     {{ __('Karty') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('show.investments')">
+                    {{ __('Lokaty') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

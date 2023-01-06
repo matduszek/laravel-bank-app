@@ -16,17 +16,15 @@
 
         3. Rachunek walutowy nie może być w walucie PLN.<br><br>
 
-        4. Klient może zamówić jedną kartę fizyczną, która będzie przypisana do głównego konta.<br><br>
+        4. Rachunki są rozliczane według naszych kursów, które są codziennie aktualizowane (Zakładka kantor).<br><br>
 
-        5. Rachunki są rozliczane według naszych kursów, które są codziennie aktualizowane.<br><br>
+        5. Każde konto posiada możliwość przelewu. <br><br>
 
-        6. Każde konto posiada możliwość przelewu. <br><br>
+        6. Każdy numer konta jest unikalny i przypisany do rachunku bankowego. <br><br>
 
-        7. Każdy numer konta jest unikalny i przypisany do rachunku bankowego. <br><br>
+        7. Konto oszczędnościowe może być utworzone we wszystkich dostępnych walutach (CHF, GBP, PLN, EUR, USD). <br><br>
 
-        8. Konto oszczędnościowe może być utworzone we wszystkich dostępnych walutach (CHF, GBP, PLN, EUR, USD). <br><br>
-
-        9. Do pierwszego otwartego normalnego rachunku bankowego dodawane jest 50 PLN do salda konta .<br><br>
+        8. Do pierwszego otwartego normalnego rachunku bankowego dodawane jest 50 PLN do salda konta .<br><br>
     </div>
     <div class="text-center bg-gray-400 text-gray-600 mt-10 mx-auto w-full text-sm">Bank FMMKParibas zastrzega sobie prawo do zmiany warunków kredytu.</div>
 </x-app-layout>

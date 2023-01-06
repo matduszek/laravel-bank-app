@@ -27,11 +27,13 @@
         <div id="dialog"
              class="hidden fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
             <div class="py-5 text-sm border-t border-b border-gray-300">
-                <p>Kliknij na pole 'Urządzenie docelowe', wybierz 'Zapisz jako PDF' i kliknij zapisz.</p>
+                <p>Kliknij w pole 'generuj potwierdzenie', nastepnie na nowej stronie wybierz pole 'Wydrukuj'</p>
+                <br>
+                <p>Kliknij na pole 'Urządzenie docelowe'/'Drukarka', wybierz 'Zapisz jako PDF' i kliknij zapisz.</p>
                 <br>
                 <p>Wskaż miejsce na które ma zostać zapisany pdf i zapisz.</p>
                 <br>
-                <p>Wersja Windows 11.</p>
+                <p>Wersja Windows 10/11.</p>
             </div>
             <div class="flex justify-end">
                 <!-- This button is used to close the dialog -->

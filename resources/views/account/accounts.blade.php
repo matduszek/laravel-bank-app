@@ -22,6 +22,10 @@
     @endif
 
     @foreach($mya as $dupa)
+        @if($dupa->type == 'I')
+
+        @else
+
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 @if($dupa->blik == 'T')
@@ -78,11 +82,11 @@
                                 <form method="POST" action="{{ route('transaction.edit') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$dupa->id_account}}">
-                                    <button><input type="submit" value="PRZELEW"></button>
+                                    <input type="submit" value="PRZELEW">
                                 </form>
                             </div>
                         @else
-                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-emerald-600 shadow">
+                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-emerald-600 hover:bg-emerald-700 shadow">
                                 <form method="POST" action="{{ route('transaction.edit') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$dupa->id_account}}">
@@ -94,7 +98,7 @@
 
 
                         @if($x == true && $dupa->blik == 'T')
-                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-gray-700 shadow w-3/12 rounded mx-auto mt-4">
+                            <div class="text-center sm:w-3 md:w-auto lg:w-auto text-white text-4xl bg-gray-700 hover:bg-gray-800 shadow w-3/12 rounded mx-auto mt-4">
                                 <form method="POST" action="{{ route('transaction.show') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$dupa->id_user}}">
@@ -108,6 +112,8 @@
                 </div>
             </div>
         </div>
+
+        @endif
     @endforeach
 
 

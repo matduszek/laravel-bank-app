@@ -36,8 +36,8 @@
     </div>
 
     <div class="mt-10 mx-auto bg-blue-100 w-1/2 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-        <p class="font-bold">Aktualizacja 0.84v </p>
-        <p class="text-sm">Dodano możliwość spłaty kredytu</p>
+        <p class="font-bold">Aktualizacja 0.89v </p>
+        <p class="text-sm">Dodano lokaty oraz usprawniono system kredytów!</p>
     </div>
 
 
