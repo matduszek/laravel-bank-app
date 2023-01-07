@@ -21,7 +21,7 @@
             <!-- Kwota -->
             <div>
                 <x-input-label for="amount" :value="__('Kwota')" />
-                <x-text-input id="amount" class="block mt-1 w-full" type="text" name="amount" value=""  required autofocus />
+                <x-text-input id="amount" class="block mt-1 w-full" type="text" placeholder="format: 00.00" pattern="^[0-9]+(\.[0-9]{1,2})?$" name="amount" value=""  required autofocus />
                 <x-input-error :messages="$errors->get('amount')" class="mt-2" />
             </div>
 
