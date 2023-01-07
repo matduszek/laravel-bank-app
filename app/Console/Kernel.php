@@ -19,25 +19,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
-
-        $schedule->call(function () {
-            $investments = Investment::all();
-
-            $accounts = Account::all();
-
-            foreach ($accounts as $account) {
-                if($account->type == 'I'){
-                    $account->balance = $account->balance * 1.002;
-                    $account->update();
-                }
-            }
-
-            foreach ($investments as $investment) {
-                $investment->amount = $investment->amount * 1.002;
-                $investment->update();
-            }
-        })->everyMinute();
+         $schedule->command('invest:up')->everyMinute()->withoutOverlapping();
     }
 
     /**
