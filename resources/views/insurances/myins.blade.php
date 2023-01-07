@@ -88,10 +88,12 @@
 
         @endif
 
+
+
                 @endforeach
 
     <div class="right-0">
-        {{ $list->links('vendor.pagination.tailwind') }}
+        {{ $ins->links('vendor.pagination.tailwind') }}
     </div>
             </div>
 </x-app-layout>

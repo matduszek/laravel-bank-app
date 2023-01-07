@@ -475,7 +475,7 @@ class InsuranceController extends Controller
 
     public function myins() {
 
-        $ins = Insurance::where('id_user', Auth::user()->id)->orderBy('created_at','desc')->simplePaginate(4);
+        $ins = Insurance::where('id_user', Auth::user()->id)->orderBy('created_at','desc')->Paginate(4);
 
         return view('insurances.myins', ['ins' => $ins ]);
     }

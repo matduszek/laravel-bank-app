@@ -181,13 +181,13 @@ class TicketController extends Controller
 
 
     public function showmyticketsbus() {
-        $tick = Busticket::where('id_user',Auth::user()->id)->orderBy('created_at','desc')->Simplepaginate(4);
+        $tick = Busticket::where('id_user',Auth::user()->id)->orderBy('created_at','desc')->Paginate(4);
 
         return view('tickets.mybustickets', ['tick' => $tick]);
     }
 
     public function showmyticketsroad() {
-        $tick = Roadticket::where('id_user',Auth::user()->id)->orderBy('created_at','desc')->Simplepaginate(4);
+        $tick = Roadticket::where('id_user',Auth::user()->id)->orderBy('created_at','desc')->Paginate(4);
 
         return view('tickets.myroadtickets', ['tick' => $tick]);
     }
